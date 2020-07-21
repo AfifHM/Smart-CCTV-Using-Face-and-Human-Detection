@@ -27,5 +27,6 @@ dari ketiga poin tersebut, maka kami membuat sebuah algotirma yang mampu :
 ## Detekesi Wajah Menggunakan HaarCascade
 
 ## Deteksi Manusia Menggunakan HOG-SVM
+Untuk mendeteksi keberadaan manusia yang terekam kamera, kami menggunakan algoritma HOG-SVM. HOG(Histogram Oriented Gradients) merupakan fitur yang kami ekstraksi untuk membedakan mana manusia dan mana yang bukan. Jika anda tertarik lebih dalam mengenai HOG, anda dapat membacanya [di sini](https://www.analyticsvidhya.com/blog/2019/09/feature-engineering-images-introduction-hog-feature-descriptor/)
 
 ## Durasi dan Alarm
