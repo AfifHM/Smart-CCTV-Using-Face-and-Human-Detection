@@ -11,4 +11,20 @@ untuk dapat menjalankan seluruh algoritma yang kami buat, terdapat beberapa modu
 * numpy
 * imutils
 
+## General Idea
+Untuk memahami bagaimana algoritma bekerja, mari kita definisikan kejadian tak diinginkan terlebih dahulu. Kami mendefinisikan kejadian tak diinginkan sebagai adanya orang tak dikenal saja pada CCTV yang terekam selama waktu tertentu. Ada 3 poin utama, yaitu :
 
+1. Hanya terdapat orang tak dikenal
+2. Orang tak dikenal terlihat oleh CCTV
+3. Orang tak dikenal terekam selama waktu tertentu
+
+dari ketiga poin tersebut, maka kami membuat sebuah algotirma yang mampu :
+
+1. Mengetahui identitas orang melalui wajah yang terekam
+2. Mendeteksi orang tersebut
+3. Menentukan apakah orang tersebut terekam selama waktu tertentu
+## Detekesi Wajah
+
+## Deteksi Manusia
+
+## Durasi dan Alarm
