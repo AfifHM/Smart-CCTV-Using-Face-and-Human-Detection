@@ -6,10 +6,11 @@ CCTV sering digunakan untuk mengawasi ruangan baik terbuka atau tertutup dari ke
 Algoritma dibuat menggunakan python. Jadi, segala penjelasan terkait modul yang diperlukan, kode yang diupload dan hal-hal lain terkait penggunaan algoritma yang kami buat disajikan dalam format yang digunakan python.
 
 ## Dependencies
-untuk dapat menjalankan seluruh algoritma yang kami buat, terdapat beberapa modul yang harus anda install terlebih dahulu, yaitu :
+untuk dapat menjalankan seluruh algoritma yang kami buat, terdapat beberapa modul yang harus diinstall di python anda terlebih dahulu, yaitu :
 * OpenCV
 * numpy
 * imutils
+* playsound
 
 ## General Idea
 Untuk memahami bagaimana algoritma bekerja, mari kita definisikan kejadian tak diinginkan terlebih dahulu. Kami mendefinisikan kejadian tak diinginkan sebagai adanya orang tak dikenal saja pada CCTV yang terekam selama waktu tertentu. Ada 3 poin utama, yaitu :
