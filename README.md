@@ -23,8 +23,9 @@ dari ketiga poin tersebut, maka kami membuat sebuah algotirma yang mampu :
 1. Mengetahui identitas orang melalui wajah yang terekam
 2. Mendeteksi orang tersebut
 3. Menentukan apakah orang tersebut terekam selama waktu tertentu
-## Detekesi Wajah
 
-## Deteksi Manusia
+## Detekesi Wajah Menggunakan HaarCascade
+
+## Deteksi Manusia Menggunakan HOG-SVM
 
 ## Durasi dan Alarm
