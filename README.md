@@ -73,12 +73,6 @@ varaiabel status digunakan untuk menentukan apakah deteksi awal sudah dilakukan.
 ### Face Recognition
 Beberapa hal yang perlu diperhatikan sebelum menggunakan program Face Recognition adalah sebagai berikut :
 
-#### File program
-Face Recognition menggunakan 3 program Python, yaitu 
-1. faceRecognition.py yang berisi kumpulan fungsi untuk pengenalan wajah diantaranya fungsi untuk training, fungsi untuk memberi kotak pada wajah dan menulis id
-2. forImage.py untuk mencoba program mengenali wajah pada foto atau gambar
-3. forVideo.py untuk mencoba program mengenali wajah pada video
-
 #### Video Input
 Dalam program terdapat fungsi untuk input gambar ataupun video pada line berikut
 ```
@@ -128,9 +122,31 @@ Parameter yang digunakan pada implementasi diatas adalah jenis font, font scale,
 Untuk mengenali wajah pada program, kita memerlukan data yang menjadi acuan dalam pengenalan wajah seseorang, dari data ini kita bisa memberikan identitas atau ID kepada wajah pada gambar apabila program memprediksi wajah pada gambar memiliki kecocokan dan kemiripan terhadap data wajah yang kita gunakan. Untuk mendapatkan data wajah ini, kita perlu melatih sistem untuk mempelajari gambar yang akan kita jadikan acuan. 
 
 Untuk melakukan training atau latihan terhadap sistem dapat anda lakukan dengan fungsi bawaan dari openCV yang merupakan bagian dari kelas fungsi ***faceRecognizer*** yaitu fungsi ***.train***, dengan implementasi pada program sebagai berikut
-```face_recognizer.train(faces,np.array(faceID))```
+```
+face_recognizer.train(faces,np.array(faceID))
+```
+Parameter yang perlu diperhatikan sebagai inputan adalah gambar yang ingin dipelajari, dengan output nantinya berupa array data dan label.
+
+#### File program
+Face Recognition menggunakan 3 program Python, yaitu 
+1. faceRecognition.py yang berisi kumpulan fungsi untuk pengenalan wajah diantaranya fungsi untuk training, fungsi untuk memberi kotak pada wajah dan menulis id
+2. forImage.py untuk mencoba program mengenali wajah pada foto atau gambar
+3. forVideo.py untuk mencoba program mengenali wajah pada video
 
 #### Cara menggunakan program
+Untuk bisa menggunakan program anda perlu memperhatikan langkah berikut :
+1. Silahkan download program untuk face recognition di folder ***faceRecognition***, anda akan menemukan 3 buah file Python seperti yang telah dijelaskan diatas.
+2. Letakkan gambar yang akan anda uji di folder ***testImages***.
+3. Pada folder ***trainingImages***, terdapat gambar yang akan dijadikan data training untuk melatih classifier mengenali beberapa orang yang diinginkan. Apabila ingin menambahkan jumlah orang yang dikenali bisa menambah folder dengan nama folder yang berbeda dari folder lainnya. (Bisa berupa angka seperti 0,1 dan 2)
+4. Tambahkan id atau label mereka pada file ***forImage.py*** dan ***forVideo.py***, contohnya seperti implementasi dibawah
+```
+name={0:"Taylor",1:"Ronaldo",2:"Faruq",3:"Fadhil",4:"Unknown"}
+```
+5. Buka file faceRecognition.py dan sesuaikan parameter fungsi ***.detectMultiscale*** sesuai kebutuhan anda dalam mendeteksi wajah.
+6. Untuk menggunakan program untuk deteksi wajah pada gambar bisa menggunakan program ***forImage.py***, dengan memberikan path gambar pada variabel test_img.
+7. Untuk menggunakan program untuk deteksi wajah pada gambar bisa menggunakan program ***forVideo.py***, dengan memberikan path gambar pada variabel cap.
+8. Sesuaikan confidence dengan hasil prediksi sistem untuk menampilkan id dari wajah yang diprediksi oleh sistem.
+ 
 
 ### Human Detection
 Beberapa hal yang perlu diperhatikan sebelum menggunakan program human detection (Human_Recognition.py dan HumanRecAndAlarm.py) adalah sebagai berikut :
