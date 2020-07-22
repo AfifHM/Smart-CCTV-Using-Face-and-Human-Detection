@@ -32,7 +32,7 @@ dari ketiga poin tersebut, maka kami membuat sebuah algoritma yang mampu :
 ## Deteksi dan pengenalan Wajah Menggunakan HaarCascade
 Untuk mendeteksi wajah menggunaakan kamera, kami menggunakan algoritma Viola Jones. Prosedur deteksi wajah Viola-Jones mengklasifikasikan gambar berdasarkan pada nilai fitur sederhana. Sehingga metode algoritma Viola Jones merupakan salah satu metode deteksi wajah dengan tingkat akurasi yang tinggi dan komputasi yang cepat. Algoritma Viola Jones menggunakan fitur Haar sebagai deskriptor kemudian menggabungkan Integral Image dan AdaBoost Classifier untuk mencari dan melakukan seleksi nilai fitur dan membentuk Cascade Classifier. Classifier tersebut yang akan digunakan untuk mendeteksi wajah pada gambar. Jika tertarik untuk membaca lebih mendalam mengenai Algoritma Viola Jones dapat mengakses [di sini](https://www.superdatascience.com/blogs/opencv-face-recognition) atau untuk yang berbasis project bisa diakses [disini](https://towardsdatascience.com/the-intuition-behind-facial-detection-the-viola-jones-algorithm-29d9106b6999#:~:text=The%20Viola%2DJones%20algorithm%20first,which%20will%20be%20explained%20later.)
 
-Untuk mendeteksi wajah, digunakan fungsi ***haarscascade.detectMultiscale*** dengan beberapa parameter yang dapat diubah apabila menginginkan hasil yang berbeda dari hasil yang kami dapatkan. Untuk memahami lebih lanjut mengenai fungsi ini bisa diakses [disini](https://docs.opencv.org/2.4/modules/objdetect/doc/cascade_classification.html#cascadeclassifier-detectmultiscale).
+Untuk mendeteksi wajah, digunakan fungsi ***cv2.cascadeClassifier*** yang berfungsi untuk menetapkan objek yang ingin di deteksi berdasarkan pilihan classifier yang kita gunakan. Anda bisa membuat classifier sendiri apabila ingin membuat dan melatih classifier untuk objek lainnya anda bisa mengaksesnya [disini](https://docs.opencv.org/3.3.0/dc/d88/tutorial_traincascade.html) dan fungsi lainnya yaitu ***cascadeClassifier.detectMultiscale*** dengan beberapa parameter yang dapat diubah apabila menginginkan hasil yang berbeda dari hasil yang kami dapatkan. Untuk memahami lebih lanjut mengenai fungsi ini bisa diakses [disini](https://docs.opencv.org/2.4/modules/objdetect/doc/cascade_classification.html#cascadeclassifier-detectmultiscale).
 
 Berikut ini contoh deteksi wajah manusia yang kami lakukan
 
@@ -103,6 +103,26 @@ cap = cv2.VideoCapture('https://www.dropbox.com/s/39f9fo9ch4gqoig/sample_video.m
 Namun, untuk penggunaan stream online perlu diperhatikan beberapa hal yaitu versi openCV haruslah pada versi 3.4.1. Sehingga anda perlu melalukan beberapa update terhadap openCV yang anda gunakan.
 
 #### Fungsi .detectMultiscale dan .predict
+1. Fungsi ***.detectMultiscale*** merupakan fungsi bawaan openCV untuk mendeteksi objek yag ditetapkan classifier disini adalah wajah dan mengembalikan output berupa kotak pada objek yang teridentifikasi sebagai wajah yang untuk penggunaan Haarscasde Classifier maka dituliskan dalam program sebagai berikut
+```
+faces=face_haar_cascade.detectMultiScale(gray_img,scaleFactor=1.35,minNeighbors=5)
+```
+Terdapat 2 parameter utama pada fungsi ini yaitu scaleFactor dan minNeighbors. Untuk lebih lengkapnya bisa dilihat pada penjelasan fungsi ***.detectMultiscale*** dibagian atas. Untuk menggambarkan kotak kami menggunakan implementasi fungsi sebagai berikut
+```
+cv2.rectangle(test_img,(x,y),(x+w,y+h),(0,0,255),thickness=4)
+```
+dengan 2 parameter yang terdapat pada fungsi adalah warna kotak dan ketebalan garis tepi kotak yang dapat anda tukar sesuai keinginan.
+
+2. Fungsi ***.predict*** merupakan fungsi bawaan dari openCV yang merupakan bagian dari kelas fungsi ***faceRecognizer***, dengan input berupa gambar atau frame video dan fungsi akan memberikan prediksi kemiripan terdekat dari gambar input dengan array data yang disediakan lalu akan diberikan output berupa nilai confidence atau nilai kemiripan gambar. Implementasinya pada program adalah sebagai berikut
+```
+label,confidence=face_recognizer.predict(roi_gray)
+```
+Parameter yang mempengaruhi hasil prediksi adalah data training yang telah kita latih sebelumnya. Semakin bagus kualitas dan kuantitas data training maka hasil prediksi akan semakin baik. Jadi harap anda memastikan data training yang anda gunakan adalah data yang cukup bagus.
+Lalu untuk penulisan ID wajah digunakan implementasi pada program sebagai berikut
+```
+cv2.putText(test_img,text,(x,y),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),2)
+```
+Parameter yang digunakan pada implementasi diatas adalah jenis font, font scale, warna font dan ketebalan font. Parameter ini bisa ditukar sesuai keinginan anda.
 
 #### Training Data untuk ID wajah
 
