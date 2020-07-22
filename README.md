@@ -74,7 +74,10 @@ varaiabel status digunakan untuk menentukan apakah deteksi awal sudah dilakukan.
 Beberapa hal yang perlu diperhatikan sebelum menggunakan program Face Recognition adalah sebagai berikut :
 
 #### File program
-File program ada 3, yaitu faceRecognition.py yang berisi kumpulan fungsi untuk pengenalan wajah, forImage.py untuk mencoba mengenali wajah pada foto atau gambar dan forVideo.py untuk mencoba mengenali wajah pada video.
+Face Recognition menggunakan 3 program Python, yaitu 
+1. faceRecognition.py yang berisi kumpulan fungsi untuk pengenalan wajah diantaranya fungsi untuk training, fungsi untuk memberi kotak pada wajah dan menulis id
+2. forImage.py untuk mencoba program mengenali wajah pada foto atau gambar
+3. forVideo.py untuk mencoba program mengenali wajah pada video
 
 #### Video Input
 Dalam program terdapat fungsi untuk input gambar ataupun video pada line berikut
