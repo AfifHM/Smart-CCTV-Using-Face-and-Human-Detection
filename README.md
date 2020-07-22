@@ -14,6 +14,8 @@ note : Harap menginstall modul opencv-contrib-python dikarenakan modul ini memua
 * playsound
 * time
 
+Selain itu, dalam pengerjaan dan pengetesan kami menggunakan PyCharm Community Version sebagai IDE-nya. Anda dapat mendownload PyCharm secara gratis [di sini](https://www.jetbrains.com/pycharm/). Apabila anda menggunakan IDE lain, harap diperhatikan bagaimana IDE tersebut bekerja. Karena bisa saja ada sedikit perbedaan dengan penjelasan yang kami berikan nantinya terkait menjalankan program
+
 ## General Idea
 Untuk memahami bagaimana algoritma bekerja, mari kita definisikan kejadian tak diinginkan terlebih dahulu. Kami mendefinisikan kejadian tak diinginkan sebagai adanya orang tak dikenal saja pada CCTV yang terekam selama waktu tertentu. Ada 3 poin utama, yaitu :
 
