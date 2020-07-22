@@ -64,7 +64,7 @@ Selebihnya, anda hanya tinggal me-run saja kodenya. Jangan lupa untuk mengganti 
 Untuk menentukan durasi deteksi, kami memanfaatkan fungsi ***hog.DetectMultiScale()***. Fungsi tersebut mengembalikan lokasi manusia berbentuk koordinat. Sehingga dapat dijadikan acuan apakah dalam video terdeteksi manusia atau tidak. Durasi dapat dihitung dengan menggunakan array timestamp berisi tiga nilai, waktu pertama terdeteksi, waktu terakhir terdeteksi dan status. Kira-kira array akan terlihat seperti berikut.
 
 ```
-timestamp [waktu awal,waktu akhir, status]
+timestamp [waktu awal,waktu akhir, durasi, status]
 ```
 varaiabel status digunakan untuk menentukan apakah deteksi awal sudah dilakukan. Pada kode yang kami buat, nilai diset False ketika deteksi pertama belum dilakukan. Sehingga timestamp waktu awal akan diupdate. Kemudian status berubah menjadi True apabila deteksi pertama sudah dilakukan. Sehingga waktu akhir bisa diambil dan durasi bisa dihitung. Apabila durasi melebihi threshold, maka alarm akan menyala menggunakan fungsi ***playsound()***. Anda bisa menggunakan suara alarm yang anda suka. Anda dapat melakukan pengetesan deteksi manusia sekaligus durasi dan alarm menggunakan HumanRecAndAlarm.py.
 
@@ -95,3 +95,9 @@ Untuk video output, terdapat pada line berikut
 out = cv2.VideoWriter('outputfilename.avi',cv2.VideoWriter_fourcc(*'MJPG'),fps,(640,480))
 ```
 Kami tidak menyarankan anda mengubah parameter tersebut, kecuali nama outputfilename. apabila anda ingin mengubahnya, tolong dicari terlebih dahulu format videowriternya. Sama seperti video input, anda dapat mengganti nama video output dengan nama dan direktori yang diinginkan serta menggunakan video stream seperti rtsp.
+
+#### Fungsi hog.DetectMultiScale
+
+#### Durasi
+
+#### Alarm
