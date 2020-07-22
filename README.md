@@ -104,7 +104,7 @@ Namun, untuk penggunaan stream online perlu diperhatikan beberapa hal yaitu vers
 
 #### Fungsi .detectMultiscale dan .predict
 
-####
+#### Training Data untuk ID wajah
 
 
 ### Human Detection
