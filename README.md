@@ -8,6 +8,7 @@ Algoritma dibuat menggunakan python. Jadi, segala penjelasan terkait modul yang 
 ## Dependencies
 untuk dapat menjalankan seluruh algoritma yang kami buat, terdapat beberapa modul yang harus diinstall di python anda terlebih dahulu, yaitu :
 * OpenCV
+note : Harap menginstall modul opencv-contrib-python dikarenakan modul ini memuat modul utama sekaligus modul contrib yang bakal diperlukan selama proses pengerjaan.
 * numpy
 * imutils
 * playsound
@@ -19,13 +20,26 @@ Untuk memahami bagaimana algoritma bekerja, mari kita definisikan kejadian tak d
 2. Orang tak dikenal terlihat oleh CCTV
 3. Orang tak dikenal terekam selama waktu tertentu
 
-dari ketiga poin tersebut, maka kami membuat sebuah algotirma yang mampu :
+dari ketiga poin tersebut, maka kami membuat sebuah algoritma yang mampu :
 
 1. Mengetahui identitas orang melalui wajah yang terekam
 2. Mendeteksi orang tersebut
-3. Menentukan apakah orang tersebut terekam selama waktu tertentu
+3. Menentukan apakah orang tersebut terekam selama durasi waktu tertentu
 
-## Detekesi Wajah Menggunakan HaarCascade
+## Detekesi dan pengenalan Wajah Menggunakan HaarCascade
+Untuk mendeteksi wajah menggunaakan kamera, kami menggunakan algoritma Viola Jones. Prosedur deteksi wajah Viola-Jones mengklasifikasikan gambar berdasarkan pada nilai fitur sederhana. Sehingga metode algoritma Viola Jones merupakan salah satu metode deteksi wajah dengan tingkat akurasi yang tinggi dan komputasi yang cepat. Algoritma Viola Jones menggunakan fitur Haar sebagai deskriptor kemudian menggabungkan Integral Image dan AdaBoost Classifier untuk mencari dan melakukan seleksi nilai fitur dan membentuk Cascade Classifier. Classifier tersebut yang akan digunakan untuk mendeteksi wajah pada gambar. Jika tertarik untuk membaca lebih mendalam mengenai Algoritma Viola Jones dapat mengakses [disini](https://www.superdatascience.com/blogs/opencv-face-recognition) atau untuk yang berbasis project bisa diakses [disini](https://towardsdatascience.com/the-intuition-behind-facial-detection-the-viola-jones-algorithm-29d9106b6999#:~:text=The%20Viola%2DJones%20algorithm%20first,which%20will%20be%20explained%20later.)
+
+Berikut ini contoh deteksi wajah manusia yang kami lakukan
+
+(Gambarnya mas)
+
+Untuk mengenali wajah, kami menggunakan sistem training terhadap classifier dengan menggunakan data training. Lalu hasil training akan dijadikan untuk penentu identitas wajah yang dideteksi dengan menggunakan fungsi ***faceRecognizer.predict*** yang merupakan fungsi bawaan dari openCV untuk mendeteksi kemiripan gambar dengan array input. Untuk memahami lebih dalam terkait fungsi ini bisa diakses [disini](https://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_api.html#facerecognizer-predict).
+
+Berikut ini contoh pengenalan id wajah manusia yang kami lakukan
+
+(Gambarnya mas)
+
+Untuk uji coba bisa dilakukan dengan melakukan run pada code yang disediakan. Harap disesuaikan beberapa nama folder, directory dan parameter sesuai yang digunakan.
 
 ## Deteksi Manusia Menggunakan HOG-SVM
 Untuk mendeteksi keberadaan manusia yang terekam kamera, kami menggunakan algoritma HOG-SVM. HOG(Histogram Oriented Gradients) merupakan fitur yang kami ekstraksi untuk membedakan mana manusia dan mana yang bukan. Jika anda tertarik lebih dalam mengenai HOG, anda dapat membacanya [di sini](https://www.analyticsvidhya.com/blog/2019/09/feature-engineering-images-introduction-hog-feature-descriptor/). Kami menggunakan fungsi bawaan dari openCV untuk mengekstraksi fitur HOG, yang kemudian diklasifikasi oleh SVM.
@@ -46,3 +60,5 @@ Untuk menentukan durasi deteksi, kami memanfaatkan fungsi ***hog.DetectMultiScal
 ```
 timestamp [waktu awal,waktu akhir, status]
 ```
+
+## Cara menggunakan kode program
