@@ -14,7 +14,7 @@ untuk dapat menjalankan seluruh algoritma yang kami buat, terdapat beberapa modu
 * playsound
 * time
 
-Selain itu, dalam pengerjaan dan pengetesan kami menggunakan ***PyCharm Community Version*** sebagai IDE-nya. Anda dapat mendownload PyCharm secara gratis [di sini](https://www.jetbrains.com/pycharm/). Apabila anda menggunakan IDE lain, harap diperhatikan bagaimana IDE tersebut bekerja. Karena bisa saja ada sedikit perbedaan dengan penjelasan yang kami berikan nantinya terkait menjalankan program
+Selain itu, dalam pengerjaan dan pengetesan kami menggunakan ***PyCharm Community Version*** dan juga ***Python Development Software*** sebagai IDE-nya. Anda dapat mendownload PyCharm secara gratis [di sini](https://www.jetbrains.com/pycharm/) dan Python Software [disini](https://www.python.org/downloads/). Apabila anda menggunakan IDE lain, harap diperhatikan bagaimana IDE tersebut bekerja. Karena bisa saja ada sedikit perbedaan dengan penjelasan yang kami berikan nantinya terkait menjalankan program
 
 ## General Idea
 Untuk memahami bagaimana algoritma bekerja, mari kita definisikan kejadian tak diinginkan terlebih dahulu. Kami mendefinisikan kejadian tak diinginkan sebagai adanya orang tak dikenal saja pada CCTV yang terekam selama waktu tertentu. Ada 3 poin utama, yaitu :
@@ -125,6 +125,10 @@ cv2.putText(test_img,text,(x,y),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),2)
 Parameter yang digunakan pada implementasi diatas adalah jenis font, font scale, warna font dan ketebalan font. Parameter ini bisa ditukar sesuai keinginan anda.
 
 #### Training Data untuk ID wajah
+Untuk mengenali wajah pada program, kita memerlukan data yang menjadi acuan dalam pengenalan wajah seseorang, dari data ini kita bisa memberikan identitas atau ID kepada wajah pada gambar apabila program memprediksi wajah pada gambar memiliki kecocokan dan kemiripan terhadap data wajah yang kita gunakan. Untuk mendapatkan data wajah ini, kita perlu melatih sistem untuk mempelajari gambar yang akan kita jadikan acuan. 
+
+Untuk melakukan training atau latihan terhadap sistem dapat anda lakukan dengan fungsi bawaan dari openCV yang merupakan bagian dari kelas fungsi ***faceRecognizer*** yaitu fungsi ***.train***, dengan implementasi pada program sebagai berikut
+```face_recognizer.train(faces,np.array(faceID))```
 
 #### Cara menggunakan program
 
