@@ -68,7 +68,7 @@ timestamp [waktu awal,waktu akhir, durasi, status]
 ```
 varaiabel status digunakan untuk menentukan apakah deteksi awal sudah dilakukan. Pada kode yang kami buat, nilai diset False ketika deteksi pertama belum dilakukan. Sehingga timestamp waktu awal akan diupdate. Kemudian status berubah menjadi True apabila deteksi pertama sudah dilakukan. Sehingga waktu akhir bisa diambil dan durasi bisa dihitung. Apabila durasi melebihi threshold, maka alarm akan menyala menggunakan fungsi ***playsound()***. Anda bisa menggunakan suara alarm yang anda suka. Anda dapat melakukan pengetesan deteksi manusia sekaligus durasi dan alarm menggunakan HumanRecAndAlarm.py.
 
-## Cara menggunakan kode program
+## Penggunaan kode program
 
 ### Face Recognition
 Beberapa hal yang perlu diperhatikan sebelum menggunakan program Face Recognition adalah sebagai berikut :
@@ -106,6 +106,7 @@ Namun, untuk penggunaan stream online perlu diperhatikan beberapa hal yaitu vers
 
 #### Training Data untuk ID wajah
 
+#### Cara menggunakan program
 
 ### Human Detection
 Beberapa hal yang perlu diperhatikan sebelum menggunakan program human detection (Human_Recognition.py dan HumanRecAndAlarm.py) adalah sebagai berikut :
