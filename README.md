@@ -73,3 +73,25 @@ varaiabel status digunakan untuk menentukan apakah deteksi awal sudah dilakukan.
 ### Face Recognition
 
 ### Human Detection
+Beberapa hal yang perlu diperhatikan sebelum menggunakan program human detection (Human_Recognition.py dan HumanRecAndAlarm.py) adalah sebagai berikut :
+
+#### Video Input dan Output
+dalam program yang dibuat, inisiallisasi video input terdapat pada line berikut
+```
+cap = cv2.VideoCapture('FileName.mp4')
+```
+anda dapat menggunakan nama file dan direktori yang anda inginkan, misalnya
+```
+cap = cv2.VideoCapture('D:\Video\FileName.mp4')
+```
+atau, anda juga dapat menggunakan stream online melalui rtsp atau sejenisnya, misalnya
+```
+cap = cv2.VideoCapture('rtsp://root:pass@192.168.0.91:554/axis-media/media.amp')
+```
+Namun, perlu diperhatikan bahwa penggunaan url rtsp pada openCV dapat dilakukan pada versi 3.4.1. Apabila anda tidak memilikinya, anda perlu menginstall versi terbarunya atau menggunakan cara lain yang tersebar di internet.
+
+Untuk video output, terdapat pada line berikut
+```
+out = cv2.VideoWriter('outputfilename.avi',cv2.VideoWriter_fourcc(*'MJPG'),fps,(640,480))
+```
+Kami tidak menyarankan anda mengubah parameter tersebut, kecuali nama outputfilename. apabila anda ingin mengubahnya, tolong dicari terlebih dahulu format videowriternya. Sama seperti video input, anda dapat mengganti nama video output dengan nama dan direktori yang diinginkan serta menggunakan video stream seperti rtsp.
