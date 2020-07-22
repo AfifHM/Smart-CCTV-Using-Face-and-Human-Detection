@@ -37,7 +37,7 @@ Untuk mengenali wajah, kami menggunakan sistem training terhadap classifier deng
 
 Berikut ini contoh pengenalan id wajah manusia yang kami lakukan
 
-<img src="Images_Hasil/FaceRecognition1.png" width=500>
+<img src="Images_Hasil/FaceRecognition2.png" width=500>
 
 Untuk uji coba bisa dilakukan dengan melakukan run pada code yang disediakan. Harap disesuaikan beberapa nama folder, directory dan parameter sesuai yang digunakan.
 
@@ -62,4 +62,7 @@ timestamp [waktu awal,waktu akhir, status]
 ```
 
 ## Cara menggunakan kode program
+
 ### Face Recognition
+
+### Human Detection
