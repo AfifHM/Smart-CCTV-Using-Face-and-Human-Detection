@@ -29,8 +29,10 @@ dari ketiga poin tersebut, maka kami membuat sebuah algoritma yang mampu :
 2. Mendeteksi orang tersebut
 3. Menentukan apakah orang tersebut terekam selama durasi waktu tertentu
 
-## Detekesi dan pengenalan Wajah Menggunakan HaarCascade
+## Deteksi dan pengenalan Wajah Menggunakan HaarCascade
 Untuk mendeteksi wajah menggunaakan kamera, kami menggunakan algoritma Viola Jones. Prosedur deteksi wajah Viola-Jones mengklasifikasikan gambar berdasarkan pada nilai fitur sederhana. Sehingga metode algoritma Viola Jones merupakan salah satu metode deteksi wajah dengan tingkat akurasi yang tinggi dan komputasi yang cepat. Algoritma Viola Jones menggunakan fitur Haar sebagai deskriptor kemudian menggabungkan Integral Image dan AdaBoost Classifier untuk mencari dan melakukan seleksi nilai fitur dan membentuk Cascade Classifier. Classifier tersebut yang akan digunakan untuk mendeteksi wajah pada gambar. Jika tertarik untuk membaca lebih mendalam mengenai Algoritma Viola Jones dapat mengakses [di sini](https://www.superdatascience.com/blogs/opencv-face-recognition) atau untuk yang berbasis project bisa diakses [disini](https://towardsdatascience.com/the-intuition-behind-facial-detection-the-viola-jones-algorithm-29d9106b6999#:~:text=The%20Viola%2DJones%20algorithm%20first,which%20will%20be%20explained%20later.)
+
+Untuk mendeteksi wajah, digunakan fungsi ***haarscascade.detectMultiscale*** dengan beberapa parameter yang dapat diubah apabila menginginkan hasil yang berbeda dari hasil yang kami dapatkan. Untuk memahami lebih lanjut mengenai fungsi ini bisa diakses [disini](https://docs.opencv.org/2.4/modules/objdetect/doc/cascade_classification.html#cascadeclassifier-detectmultiscale).
 
 Berikut ini contoh deteksi wajah manusia yang kami lakukan
 
