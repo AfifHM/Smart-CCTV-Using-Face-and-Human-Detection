@@ -71,6 +71,38 @@ varaiabel status digunakan untuk menentukan apakah deteksi awal sudah dilakukan.
 ## Cara menggunakan kode program
 
 ### Face Recognition
+Beberapa hal yang perlu diperhatikan sebelum menggunakan program Face Recognition adalah sebagai berikut :
+
+#### File program
+File program ada 3, yaitu faceRecognition.py yang berisi kumpulan fungsi untuk pengenalan wajah, forImage.py untuk mencoba mengenali wajah pada foto atau gambar dan forVideo.py untuk mencoba mengenali wajah pada video.
+
+#### Video Input
+Dalam program terdapat fungsi untuk input gambar ataupun video pada line berikut
+```
+test_img = cv2.imread('FileName.jpg') #untuk input berupa gambar
+```
+dan
+```
+cap = cv2.VideoCapture('FileName.mp4') #untuk input berupa video
+```
+Anda dapat menggunakan nama file dan directory yang anda inginkan, misalnya
+```
+test_img=cv2.VideoCapture('D:\Test\FileName.mp4') #untuk input berupa gambar
+```
+atau, anda juga dapat menggunakan stream online melalui rtsp atau sejenisnya, misalnya
+```
+cap = cv2.VideoCapture('rtsp://root:pass@192.168.0.91:554/axis-media/media.amp')
+```
+dan
+```
+cap = cv2.VideoCapture('https://www.dropbox.com/s/39f9fo9ch4gqoig/sample_video.mp4')
+```
+Namun, untuk penggunaan stream online perlu diperhatikan beberapa hal yaitu versi openCV haruslah pada versi 3.4.1. Sehingga anda perlu melalukan beberapa update terhadap openCV yang anda gunakan.
+
+#### Fungsi .detectMultiscale dan .predict
+
+####
+
 
 ### Human Detection
 Beberapa hal yang perlu diperhatikan sebelum menggunakan program human detection (Human_Recognition.py dan HumanRecAndAlarm.py) adalah sebagai berikut :
