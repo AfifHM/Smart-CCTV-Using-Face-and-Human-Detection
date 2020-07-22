@@ -8,7 +8,7 @@ Algoritma dibuat menggunakan python. Jadi, segala penjelasan terkait modul yang 
 ## Dependencies
 untuk dapat menjalankan seluruh algoritma yang kami buat, terdapat beberapa modul yang harus diinstall di python anda terlebih dahulu, yaitu :
 * OpenCV
-note : Harap menginstall modul opencv-contrib-python dikarenakan modul ini memuat modul utama sekaligus modul contrib yang bakal diperlukan selama proses pengerjaan.
+(note : Harap menginstall modul opencv-contrib-python dikarenakan modul ini memuat modul utama sekaligus modul contrib yang bakal diperlukan selama proses pengerjaan)
 * numpy
 * imutils
 * playsound
