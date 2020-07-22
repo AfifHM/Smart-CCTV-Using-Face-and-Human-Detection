@@ -147,6 +147,7 @@ Gambar di atas merupakan salah satu contoh penggunaan non-maximum suppression. I
 regions = np.array([[x, y, x + w, y + h] for (x, y, w, h) in regions])
 pick = non_max_suppression(regions, probs=None, overlapThresh=0.65)
 ```
+Anda dapat membaca non-maximum suppression lebih jauh [di sini](https://www.pyimagesearch.com/2014/11/17/non-maximum-suppression-object-detection-python/)
 Setelah melakukan non-maximum suppression, barulah kami menggambar kotak pembatasnya. Implementasinya adalah sebagai berikut
 ```
  for (xA, yA, xB, yB) in pick:
