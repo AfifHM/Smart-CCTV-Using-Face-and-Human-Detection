@@ -141,6 +141,18 @@ Harap diingat, parameter yang digunakan dioptimalkan untuk penggunaan dalam ruan
 Sebelum membuat kotak pembatas, kami menggunakan non-maximum suppression untuk menghindari overlap kotak yang memiliki objek deteksi yang sama.
 
 <img src="https://pyimagesearch.com/wp-content/uploads/2014/10/nms_slow_01.jpg" width=500>
+
+Gambar di atas merupakan salah satu contoh penggunaan non-maximum suppression. Implementasi dalam program adalah sebagai berikut
+```
+regions = np.array([[x, y, x + w, y + h] for (x, y, w, h) in regions])
+pick = non_max_suppression(regions, probs=None, overlapThresh=0.65)
+```
+Setelah melakukan non-maximum suppression, barulah kami menggambar kotak pembatasnya. Implementasinya adalah sebagai berikut
+```
+ for (xA, yA, xB, yB) in pick:
+      cv2.rectangle(frame, (xA, yA), (xB, yB), (0, 255, 0), 2)
+```
+Dua parameter terakhir merupakan warna kotak dan ketebalan garis kotak. Anda dapat menggantinya sesuka hati.
 #### Durasi
 
 #### Alarm
