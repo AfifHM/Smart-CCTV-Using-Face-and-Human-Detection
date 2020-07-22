@@ -87,7 +87,7 @@ cap = cv2.VideoCapture('FileName.mp4') #untuk input berupa video
 ```
 Anda dapat menggunakan nama file dan directory yang anda inginkan, misalnya
 ```
-test_img=cv2.VideoCapture('D:\Test\FileName.mp4') #untuk input berupa gambar
+test_img=cv2.VideoCapture('D:\Test\FileName.mp4')
 ```
 atau, anda juga dapat menggunakan stream online melalui rtsp atau sejenisnya, misalnya
 ```
