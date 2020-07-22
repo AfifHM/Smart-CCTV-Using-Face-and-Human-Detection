@@ -31,7 +31,7 @@ Untuk mendeteksi wajah menggunaakan kamera, kami menggunakan algoritma Viola Jon
 
 Berikut ini contoh deteksi wajah manusia yang kami lakukan
 
-<img src="Images_Hasil/FaceDetection1.png">
+<img src="Images_Hasil/FaceDetection1.png" width=100>
 
 Untuk mengenali wajah, kami menggunakan sistem training terhadap classifier dengan menggunakan data training. Lalu hasil training akan dijadikan untuk penentu identitas wajah yang dideteksi dengan menggunakan fungsi ***faceRecognizer.predict*** yang merupakan fungsi bawaan dari openCV untuk mendeteksi kemiripan gambar dengan array input. Untuk memahami lebih dalam terkait fungsi ini bisa diakses [disini](https://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_api.html#facerecognizer-predict).
 
