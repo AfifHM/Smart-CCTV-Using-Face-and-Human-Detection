@@ -131,8 +131,16 @@ out = cv2.VideoWriter('outputfilename.avi',cv2.VideoWriter_fourcc(*'MJPG'),fps,(
 ```
 Kami tidak menyarankan anda mengubah parameter tersebut, kecuali nama outputfilename. apabila anda ingin mengubahnya, tolong dicari terlebih dahulu format videowriternya. Sama seperti video input, anda dapat mengganti nama video output dengan nama dan direktori yang diinginkan serta menggunakan video stream seperti rtsp.
 
-#### Fungsi hog.DetectMultiScale
+#### Fungsi hog.DetectMultiScale dan Bounding Box
+Fungsi ***hog.DetectMultiScale*** mengembalikan lokasi manusia yang terdeteksi dalam bentuk koordinat. Dalam program, penggunaannya adalah sebagai berikut
+```
+(regions, _) = hog.detectMultiScale(frame, winStride=(4,4),padding=(4,4),scale=1.2)
+```
+Harap diingat, parameter yang digunakan dioptimalkan untuk penggunaan dalam ruangan. Apabila anda ingin menggunakannya di tempat yang berbeda, atau kurang puas dengan hasil akhir yang kami buat, anda dapat mengubah parameter sesuai yang diinginkan. Namun, jangan lupa untuk membaca arti dari parameter dalam fungsi tersebut [di sini](https://www.pyimagesearch.com/2015/11/16/hog-detectmultiscale-parameters-explained/)
 
+Sebelum membuat kotak pembatas, kami menggunakan non-maximum suppression untuk menghindari overlap kotak yang memiliki objek deteksi yang sama.
+
+<img src="https://pyimagesearch.com/wp-content/uploads/2014/10/nms_slow_01.jpg" width=500>
 #### Durasi
 
 #### Alarm
