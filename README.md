@@ -149,6 +149,12 @@ name={0:"Taylor",1:"Ronaldo",2:"Faruq",3:"Fadhil",4:"Unknown"}
  
 
 ### Human Detection
+Terdapat 2 porgram yang dapat anda gunakan, yaitu :
+1. Human_Recog.py
+Program ini berisi algoritma deteksi manusia saja
+2. HumanRecAndAlarm.py
+Program ini berisi algoritma deteksi,durasi serta alarm
+
 Beberapa hal yang perlu diperhatikan sebelum menggunakan program human detection (Human_Recognition.py dan HumanRecAndAlarm.py) adalah sebagai berikut :
 
 #### Video Input dan Output
@@ -196,5 +202,38 @@ Setelah melakukan non-maximum suppression, barulah kami menggambar kotak pembata
 ```
 Dua parameter terakhir merupakan warna kotak dan ketebalan garis kotak. Anda dapat menggantinya sesuka hati.
 #### Durasi
+Untuk menentukan durasi deteksi, kami memanfaatkan keluaran fungsi ***hog.DetectMultiScale*** berupa koordinat manusia yang terdeteksi. Apabila koordinat tersebut tidak kosong, maka artinya ada manusia yang terdeteksi. Sebaliknya, apabila kosong, maka manusia tidak terdeteksi dalam video. Implementasinya adalah sebagai berikut
+
+```
+        if len(regions) == 0:
+            print('Human Not Detected')
+
+
+        else:
+            print('Human Detected')
+            if tsd[3] == False:
+                # Pertama kali deteksi, waktu awal diambil
+                tsd[0] = time.time()
+                tsd[3] = True
+            elif tsd[3] == True:
+                # Sudah pernah deteksi, waktu akhir diambil
+                tsd[1] = time.time()
+            tsd[2] = tsd[1] - tsd[0]
+            print("Waktu terdeteksi : ")
+            print(tsd, '\n')
+```
+dengan tsd merupakan variabel timestamp. Perlu diperhatikan bahwa elemen ke-4 dari tsd merupakan status yang menunjukkan apakah objek yang dideteksi baru pertama kali dideteksi atau tidak. Pengambilan waktu dan durasi diambil dalam satua ***detik***.
 
 #### Alarm
+Alarm akan menyala ketika durasi melebihi threshold yang ditentukan. Contoh implementasi dalam program adalah sebagai berikut
+```
+# Menyalakan Alarm bila durasi deteksi melebihi threshold
+        if (tsd[2] >= 10):
+            print("Alarm Triggerred!!!")
+            playsound("Industrial Alarm.wav")
+            break
+```
+Pada contoh, alarm akan menyala apabila durasi melebihi 10 detik. Kemudian keluar program setelah menyalakan alarm. Anda dapat mengubah suara alarm sesuai keinginan anda dengan mengubah input dari fungsi ***playsound()***.
+
+#### Penggunaan program
+Untuk menggunakan program cukup sederhana. Anda tinggal mendownload saja program deteksi manusia yang anda butuhkan (Human_Recog.py atau HumanRecAndAlarm.py).
