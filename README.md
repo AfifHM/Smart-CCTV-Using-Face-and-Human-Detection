@@ -236,4 +236,9 @@ Alarm akan menyala ketika durasi melebihi threshold yang ditentukan. Contoh impl
 Pada contoh, alarm akan menyala apabila durasi melebihi 10 detik. Kemudian keluar program setelah menyalakan alarm. Anda dapat mengubah suara alarm sesuai keinginan anda dengan mengubah input dari fungsi ***playsound()***.
 
 #### Penggunaan program
-Untuk menggunakan program cukup sederhana. Anda tinggal mendownload saja program deteksi manusia yang anda butuhkan (Human_Recog.py atau HumanRecAndAlarm.py).
+Untuk menggunakan program cukup sederhana. Anda tinggal mendownload saja program deteksi manusia yang anda butuhkan (Human_Recog.py atau HumanRecAndAlarm.py). Sisanya tinggal mengatur hal-hal yang sudah kami sebutkan sebelumnya bila perlu. Untuk menyederhanakan bagian di atas, pengaturan yang anda lakukan adalah :
+1. Atur video input dan outpput sesuai yang anda inginkan.
+2. Atur fungsi ***hog.DetectMultiScale*** sesuai kebutuhan.
+3. Tentukan durasi dan alarm sesuai keinginan anda.
+
+Lalu, run program di IDE python yang anda gunakan. Selamat mencoba!
