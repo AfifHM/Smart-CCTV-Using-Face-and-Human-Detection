@@ -10,7 +10,7 @@ from imutils.object_detection import non_max_suppression
 import time
 
 # Variabel timestamp
-tsu=[0,0,0,False]  # untuk mendeteksi
+tsd=[0,0,0,False]  # untuk mendeteksi
 
 # Inisialisasi deteksi manusia dengan HOG
 hog = cv2.HOGDescriptor()
