@@ -242,3 +242,13 @@ Untuk menggunakan program cukup sederhana. Anda tinggal mendownload saja program
 3. Tentukan durasi dan alarm sesuai keinginan anda.
 
 Lalu, run program di IDE python yang anda gunakan. Selamat mencoba!
+
+### Human Detection
+Terdapat 2 porgram yang dapat anda gunakan, yaitu :
+1. Human_Recog.py
+Program ini berisi algoritma deteksi manusia saja
+2. HumanRecAndAlarm.py
+Program ini berisi algoritma deteksi,durasi serta alarm
+
+Anda dapat mendownload dan langsung menggunakan program yang telah tersedia. Namun, apabila anda ingin membuatnya dari awal, kami akan memandu anda mulai dari awal.
+
