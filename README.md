@@ -237,12 +237,3 @@ Pada contoh, alarm akan menyala apabila durasi melebihi 10 detik. Kemudian kelua
 
 
 
-### Human Detection
-Terdapat 2 porgram yang dapat anda gunakan, yaitu :
-1. Human_Recog.py
-Program ini berisi algoritma deteksi manusia saja
-2. HumanRecAndAlarm.py
-Program ini berisi algoritma deteksi,durasi serta alarm
-
-Anda dapat mendownload dan langsung menggunakan program yang telah tersedia. Namun, apabila anda ingin membuatnya dari awal, kami akan memandu anda mulai dari awal.
-
