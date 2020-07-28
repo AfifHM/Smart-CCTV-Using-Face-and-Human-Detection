@@ -125,7 +125,7 @@ Untuk melakukan training atau latihan terhadap sistem dapat anda lakukan dengan 
 ```
 face_recognizer.train(faces,np.array(faceID))
 ```
-Parameter yang perlu diperhatikan sebagai inputan adalah gambar yang ingin dipelajari, dengan output nantinya berupa array data dan label.
+Parameter yang perlu diperhatikan sebagai inputan adalah gambar yang ingin dipelajari, dengan output nantinya berupa array data dan label. Nantinya, data ID wajah akan disimpan di file ***trainingData.yml***, apabila file masih kosong maka harap dilaksanakan training terlebih dahulu, namun jika sudah berisi anda bisa langsung menggunakan data dengan cara load data di file tersebut.
 
 #### File program
 Face Recognition menggunakan 3 program Python, yaitu 
