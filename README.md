@@ -257,11 +257,47 @@ Untuk menjelaskan bagaimana keseluruhan program bekerja, anda dapat melihat flow
 
 Dari diagram di atas, bagian Face Detection, Human Detection dan Duration sudah dijelaskan di bagian sebelumnya. Kami akan menjelaskan terkait Room Status dan IsEmpty
 
-## Room Status
+### Room Status
 Room Status merupakan variabel yang mendeskripsikan keadaan ruangan yang sedang dipantau. Pada program yang kami buat, nilai yang digunakan adalah
 * 0 : ruangan kosong
 * 1 : ruangan ditempati orang tak dikenali sistem
 * 3 : ruangan ditempati orang yang dikenali sistem
 
-fungsi adanya variabel ini adalah untuk memberikan keputusan akhir dalam menyalakan alarm. Alarm hanya akan menyala ketika orang tak dikenali sistem masuk (Room status = 1) dan durasi deteksi melebihi threshold
+fungsi adanya variabel ini adalah untuk memberikan keputusan akhir dalam menyalakan alarm. Alarm hanya akan menyala ketika orang tak dikenali sistem masuk (Room Status = 1) dan durasi deteksi melebihi threshold
 
+### IsEmpty
+Merujuk pada flowchart, IseEmpty digunakan saat Room Status = 2, atau orang yang ada di dalam ruangan dikenali oleh sistem. Fungsi IsEmpty berguna untuk mengembalikan Room Status menjadi 0 dengan memanfaatkan deteksi manusia dan durasi.
+Idenya adalah pada ruangan kosong, seharusnya tidak terdeteksi manusia sama sekali. Apabila sistem tidak mendeteksi manusia dalam jangka waktu tertentu, maka ruangan dapat dikatakan sudah kosong. Sehingga Room Status dapat diganti menjadi 0 kembali dan sistem kembali ke state awal. implementasi pada program adalah sebagai berikut
+
+```
+        if status == 2 :
+            tsu =[0,0,0,False] #reset
+            regions = hd.detect(hog, resized_img, (4,4), (4, 4), 1.2)
+            hd.boxes(resized_img, regions)
+            if len(regions) == 0:
+                print('Human Not Detected')
+                if tsk[3] == False:
+                    tsk[0] = time.time()
+                    tsk[3] = True
+                elif tsk[3] == True:
+                    tsk[1] = time.time()
+                    tsk[2] = tsk[1] - tsk[0]
+
+        if status == 2:
+            print("Waktu tidak terdeteksi : ")
+            print(tsk, '\n')
+            if tsk[2] >= 2:  # misal tidak terdeteksi (kosong) selama 5 detik
+                print("Reset Status menjadi 0")
+                status = 0  # ubah status jadi empty
+```
+Jadi, ketika fungsi deteksi manusia tidak mengembalikan lokasi keberadaan manusia, bisa diasumsikan tidak ada manusia dalam ruangan. Lalu durasi "tak terdeteksi" dihitung. apabila durasi mencapai threshold (dalam contoh diatur menjadi 5 detik) maka Room Status dikembalikan menjadi 0
+
+### Menggunakan Full Program
+Untuk mencoba sistem yang sudah terintegrasi, anda hanya perlu melakkukan :
+
+1. Download semua file di folder FullProgram/Source Code
+2. Train classifier wajah anda menggunakan dataset anda
+3. Gunakan forVideo.py sebagai main program. Atur parameter yang anda inginkan
+4. Jalankan program di IDE yang anda gunakan
+
+Selesai. Selamat mencoba!
