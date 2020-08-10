@@ -254,3 +254,14 @@ file ini merupakan suara yang diputar ketika alarm menyala. Anda dapat mengubahn
 Untuk menjelaskan bagaimana keseluruhan program bekerja, anda dapat melihat flowchart berikut
 
 <img src="FullProgram/Full Program lv 0.vpd (4).png" width=500>
+
+Dari diagram di atas, bagian Face Detection, Human Detection dan Duration sudah dijelaskan di bagian sebelumnya. Kami akan menjelaskan terkait Room Status dan IsEmpty
+
+## Room Status
+Room Status merupakan variabel yang mendeskripsikan keadaan ruangan yang sedang dipantau. Pada program yang kami buat, nilai yang digunakan adalah
+* 0 : ruangan kosong
+* 1 : ruangan ditempati orang tak dikenali sistem
+* 3 : ruangan ditempati orang yang dikenali sistem
+
+fungsi adanya variabel ini adalah untuk memberikan keputusan akhir dalam menyalakan alarm. Alarm hanya akan menyala ketika orang tak dikenali sistem masuk (Room status = 1) dan durasi deteksi melebihi threshold
+
