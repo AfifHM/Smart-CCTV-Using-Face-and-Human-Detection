@@ -235,5 +235,20 @@ Alarm akan menyala ketika durasi melebihi threshold yang ditentukan. Contoh impl
 ```
 Pada contoh, alarm akan menyala apabila durasi melebihi 10 detik. Kemudian keluar program setelah menyalakan alarm. Anda dapat mengubah suara alarm sesuai keinginan anda dengan mengubah input dari fungsi ***playsound()***.
 
+## Full Program
+Pada bagian ini, kami akan menjelaskan bagaimana anda menggunakan program hasil integrasi antara deteksi wajah dan deteksi manusia untuk mendeteksi tindak pencurian dalam ruangan. Source code yang anda gunakan seluruhnya terdapat pada folder FullProgram pada repo ini.
+Sebelum mencobanya, anda disarankan untuk membuat dataset dan men-train classifier deteksi wajah anda terlebih dahulu. Karena yang diupload hanyalah contoh saja. Dalam folder source code, terdapat beberapa file, yakni
+
+#### forVideo.py
+file ini berisi program utama yang digunakan untuk deteksi tindak pencurian dalam ruangan.
+
+#### HumanDetection.py
+file ini berisi fungsi-fungsi yang digunakan dalam deteksi manusia. Nantinya akan dipanggil oleh program utama
+
+#### faceRecognition.py
+file ini berisi fungsi-fungsi yang digunakan dalam deteksi wajah sekaligus untuk train classifier yang digunakan untuk identifikasi wajah
+
+#### Industrial Alarm.wav
+file ini merupakan suara yang diputar ketika alarm menyala. Anda dapat mengubahnya sesuai selera. Cara mengubah suara alarm sudah dijelaskan sebelumnya
 
 
