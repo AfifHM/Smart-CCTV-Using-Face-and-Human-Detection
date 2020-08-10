@@ -251,4 +251,6 @@ file ini berisi fungsi-fungsi yang digunakan dalam deteksi wajah sekaligus untuk
 #### Industrial Alarm.wav
 file ini merupakan suara yang diputar ketika alarm menyala. Anda dapat mengubahnya sesuai selera. Cara mengubah suara alarm sudah dijelaskan sebelumnya
 
+Untuk menjelaskan bagaimana keseluruhan program bekerja, anda dapat melihat flowchart berikut
 
+<img src="FullProgram/Full Program lv 0.vpd (4).png" width=500>
